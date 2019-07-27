@@ -1,0 +1,14 @@
+{
+    "product":[
+        {"id":0,"name":"二哈","price":1200},
+        {"id":1,"name":"阿柴","price":500},
+        {"id":2,"name":"萨摩耶","price":1400},
+        {"id":3,"name":"雪纳瑞","price":1100},
+        {"id":4,"name":"热狗肠","price":300},
+        {"id":5,"name":"柯基","price":600},
+        {"id":6,"name":"沙皮","price":1500},
+        {"id":7,"name":"田园犬","price":10000},
+        {"id":8,"name":"贵宾","price":800},
+        {"id":9,"name":"金毛","price":1400}
+    ]
+}
