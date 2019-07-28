@@ -23,9 +23,10 @@
         </el-table-column>
         <el-table-column label="操作">
         <template slot-scope="scope">
+            <!-- 绑定多个事件用;隔开 -->
             <el-button
             size="mini"
-            @click="handleEdit(scope.$index, scope.row)">添加到购物车</el-button>
+            @click="handleEdit(scope.$index, scope.row);open()">添加到购物车</el-button>
         </template>
         </el-table-column>
     </el-table>
@@ -45,7 +46,12 @@ import {mapState,mapActions,mapMutations} from "vuex";
     },
     methods: {
         ...mapActions(["getdata"]),
-        ...mapMutations(["handleEdit"])
+        ...mapMutations(["handleEdit"]),
+        open() {
+        this.$alert('添加成功', '恭喜你', {
+          confirmButtonText: '确定',
+        });
+      }
     },
     mounted() {
         this.getdata("http://localhost:3000/product");

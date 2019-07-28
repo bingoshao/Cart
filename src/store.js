@@ -37,32 +37,32 @@ const store=new Vuex.Store({
             }
             console.log(state.cart);
         },
+        // element引入之后就不需要了
+        // reduce(state,id){
+        //     //根据id找到商品
+        //     let good = state.cart.find(go => go.id ==id)
+        //     //判断商品数量是否大于1，如果大于1，把该商品的数量-1；
+        //     if(good.num>1){
+        //         state.cart = state.cart.map( good =>{
+        //             if(good.id==id){
+        //                 good.num--;
+        //             }
+        //             return good;
+        //         })
+        //     }else{
+        //         //否则，把该商品从数组cart删除
+        //         state.cart = state.cart.filter(go => go.id !=id)
+        //     }
 
-        reduce(state,id){
-            //根据id找到商品
-            let good = state.cart.find(go => go.id ==id)
-            //判断商品数量是否大于1，如果大于1，把该商品的数量-1；
-            if(good.num>1){
-                state.cart = state.cart.map( good =>{
-                    if(good.id==id){
-                        good.num--;
-                    }
-                    return good;
-                })
-            }else{
-                //否则，把该商品从数组cart删除
-                state.cart = state.cart.filter(go => go.id !=id)
-            }
+        // },
 
-        },
-
-        increase(state,id){
-            for(var i in state.cart){
-                if(state.cart[i].id==id){
-                    state.cart[i].num++;
-                }
-            }
-        },
+        // increase(state,id){
+        //     for(var i in state.cart){
+        //         if(state.cart[i].id==id){
+        //             state.cart[i].num++;
+        //         }
+        //     }
+        // },
 
 
     },

@@ -2,16 +2,18 @@
     <div class="cart">
         <div class="name">{{cart.name}}</div>
         <div class="price">{{cart.price}}</div>
-        <div class="manu">
+        <!-- <div class="manu">
             <button @click="reduce(cart.id)">-</button>
                 <input type="text" v-model="cart.num">
-            <button @click="increase(cart.id)">+</button>
-        </div>
+            <button @click="increase(cart.id)" v->+</button>
+        </div> -->
+        <!-- 把v-model绑定成当前数据的num 就Ok 了 handleChange事件都不需要-->
+        <el-input-number v-model="cart.num" @blur="nonull" :min="1"></el-input-number>
     </div>
 </template>
 
 <script>
-import {mapMutations} from "vuex"
+
 export default {
     data() {
         return {
@@ -20,8 +22,16 @@ export default {
     props:["cart"],
     
     methods: {
-        ...mapMutations(["reduce","increase"])
+        // ...mapMutations(["reduce","increase"]),
+        //如果没有输入任何数量，则把数量设为1;
+        nonull(){
+           if(isNaN(this.cart.num))  {
+               this.cart.num=1;
+           }
+        }
     },
+    components:{
+    }
     
 }
 </script>

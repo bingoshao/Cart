@@ -75,4 +75,13 @@ export default {
 .el-table td, .el-table th{
     text-align: center !important;
 }
+.el-message-box {
+  width:100% !important; 
+  margin-top:200px;
+
+}
+.el-button--mini {
+  background: #e4393c !important;
+  color: #fff !important;
+}
 </style>
